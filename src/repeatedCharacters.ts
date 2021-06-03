@@ -11,5 +11,16 @@ import UnsupportedOperationException from '@/unsupportedOperationException';
  * @return booleano indicando si la cadena cumple con las propiedades
  */
 export default function isValid(cadena:string) :boolean {
-  throw new UnsupportedOperationException();
+
+
+   throw new UnsupportedOperationException();
+
+ 
+
+
 }
+
+
+
+
+

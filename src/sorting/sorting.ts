@@ -8,8 +8,27 @@ import Jugador from './jugador';
  * @return la lista ordenada de jugadores
  */
 export function ordenarPorPuntuacionYNombre(jugadores:Jugador[]) :Jugador[] {
-  throw new UnsupportedOperationException();
-}
+  // throw new UnsupportedOperationException();
+
+  // jugadores = jugadores.slice();
+  // console.log(jugadores);
+  for( let i=0;i<jugadores.length;i++){ 
+    for(let j=0;j<jugadores.length-1;j++){
+      if(jugadores[j].puntuacion < jugadores[j+1].puntuacion){
+        [jugadores[j], jugadores[j+1]] =[jugadores[j+1],jugadores[j]];
+        // console.log(jugadores);
+      }
+      else if(jugadores[j].puntuacion === jugadores[j+1].puntuacion && jugadores[j].nombre > jugadores[j+1].nombre){
+        [jugadores[j], jugadores[j+1]] =[jugadores[j+1],jugadores[j]];
+        // console.log(jugadores);
+      }
+    
+    }
+  }
+      return jugadores;
+    }
+    
+  
 
 /**
 * Se debe ordenar primero por puntuación de manera descendente. Cuando 2 jugadores tienen igual cantidad de puntos,
@@ -19,5 +38,22 @@ export function ordenarPorPuntuacionYNombre(jugadores:Jugador[]) :Jugador[] {
  * @return la lista ordenada de jugadores
  */
 export function ordenarPorPuntuacionPerdidasYNombre(jugadores:Jugador[]) :Jugador[] {
-  throw new UnsupportedOperationException();
-}
+  // throw new UnsupportedOperationException();
+
+
+  for( let i=0;i<jugadores.length;i++){ 
+    for(let j=0;j<jugadores.length-1;j++){
+      if(jugadores[j].puntuacion < jugadores[j+1].puntuacion){
+        [jugadores[j], jugadores[j+1]] =[jugadores[j+1],jugadores[j]];
+      
+      }
+      else if(jugadores[j].puntuacion === jugadores[j+1].puntuacion && jugadores[j].perdidas > jugadores[j+1].perdidas){
+        [jugadores[j], jugadores[j+1]] =[jugadores[j+1],jugadores[j]];
+      
+      }
+    }
+  }
+      return jugadores;
+    }
+    
+
