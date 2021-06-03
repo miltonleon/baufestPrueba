@@ -12,15 +12,33 @@ import UnsupportedOperationException from '@/unsupportedOperationException';
  */
 export default function isValid(cadena:string) :boolean {
 
+ //throw new UnsupportedOperationException();
+ var arrayCadena=cadena.split("").sort().reverse();
+ var contador=0;
+ var numSecuencia=1;
+ var letraActual="";
+ var letraSiguiente="";
+ var numerosSec=[];
+ var arraySinRep=[]
+ var cantidadCaracteres= arrayCadena.length
+ while (contador< cantidadCaracteres && arraySinRep.length <3) {
+     letraActual= arrayCadena[contador];
+     letraSiguiente=arrayCadena[contador+1]
+     if(letraActual ==letraSiguiente){
+         numSecuencia++;
+     }
+     else{
+         numerosSec.push(numSecuencia)
+         numSecuencia=1;   
+     }
+  arraySinRep = [...new Set(numerosSec)];
+     contador++;
 
-   throw new UnsupportedOperationException();
+}
+return arraySinRep.length<3;
 
- 
 
 
 }
-
-
-
 
 
